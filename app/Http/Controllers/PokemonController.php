@@ -28,11 +28,7 @@ class PokemonController extends Controller
     {
         $limit = $request->get('limit');
         $offset = $request->get('offset');
-        if(empty($limit) || $limit > 15)
-        {
-            $limit = 15;
-        }
-        
+       
         return $this->pokemonComponent->getByPartialName($name, $limit, $offset);
     }
 

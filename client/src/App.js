@@ -20,6 +20,10 @@ class App extends Component {
       search(event) {
         event.preventDefault()
         let keyword = document.getElementById('searchTerm').value;
+        if(keyword==='') {
+            this.setState({ pokemons: [] });
+            return;
+        }
         fetch(process.env.REACT_APP_API_URL+'search/'+keyword)        
             .then(res => res.json())
             .then((response) => {
@@ -39,13 +43,19 @@ class App extends Component {
                 <Button className='button'  type='submit' onClick={this.search}>Search</Button>
             </form>
             <div className='container'>
+                <div style={{clear: 'both'}}>
+                    {pokemons.length >=1 ? 
+                        pokemons.length + ' Pokemon'+ (pokemons.length === 1 ? '': 's') + ' found' 
+                        :'No pokemons found'
+                    }
+                </div>
                 <div className="row">
                 {
                     pokemons.length >=1 ? 
                         pokemons.map((pokemon, index) => (
                             <Pokemon key={index} name={pokemon.name} url={pokemon.url} ></Pokemon>
                         ))
-                        : 'No pokemons found'
+                        : ''
                 }
                 </div>
             </div>

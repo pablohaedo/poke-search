@@ -10,7 +10,7 @@ class PokemonComponent
     public function getAll(){
         $pokemonList = Cache::get('pokemonList');
         if($pokemonList == null) {
-            $response = Http::get('https://pokeapi.co/api/v2/pokemon?limit=1000');
+            $response = Http::get( config('app.poke_api_url') . 'pokemon?limit=1000');
             if($response->ok() && count($pokemonList = $response->json()['results']) >= 1) {
                 Cache::put('pokemonList', $pokemonList, config('app.cache_timeout'));
             }
@@ -18,7 +18,7 @@ class PokemonComponent
         return $pokemonList;
     }
 
-    public function getByPartialName($name, $limit = 15, $offset = 0) {
+    public function getByPartialName($name, $limit = 1000, $offset = 0) {
         $pokemonList = array_filter($this->getAll(), function($item) use ($name)  {
             return stripos($item['name'], $name) !== false;
         });
