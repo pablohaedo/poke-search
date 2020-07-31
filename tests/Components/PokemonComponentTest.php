@@ -25,7 +25,6 @@ class PokemonApiTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJsonCount(15)
             ->assertJsonMissingValidationErrors();
     }
 
@@ -45,7 +44,7 @@ class PokemonApiTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJsonCount(15)
+            ->assertJsonCount(50)
             ->assertJsonMissingValidationErrors();
     }
 
@@ -56,11 +55,9 @@ class PokemonApiTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJsonCount(15)
             ->assertJsonMissingValidationErrors();
         $response2
             ->assertStatus(200)
-            ->assertJsonCount(15)
             ->assertJsonMissingValidationErrors();
 
         $this->assertEquals($response[$offset],$response2[0]);
