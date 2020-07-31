@@ -7,6 +7,14 @@ This is a simple project for a test.
 ----------------------------------------------------------------------------
 
 #### Requirements
+```
+PHP >= 7.2
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+composer (https://getcomposer.org/download/)
+nodejs (https://nodejs.org/en/)
+```
 
 #### Installing dependencies
 
@@ -64,5 +72,12 @@ server {
 ----------------------------------------------------------------------------
 To run tests:
 ```shell
-./vendor/bin/phpunit/
+./vendor/bin/phpunit
+```
+
+### Static Analysis (https://phpstan.org/)
+----------------------------------------------------------------------------
+To run static analysis:
+```shell
+./vendor/bin/phpstan analyze app
 ```
