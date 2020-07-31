@@ -1,26 +1,10 @@
-
-
-input {
-    height: 35px;
-    min-width: 300px;
-    border-radius: 4px 0 0 4px;
-    text-align: center;
-    border: 3;
-    font-size: 15px;
-    color: #555;
-}
-
-
-li.pokemon {
-    display: inline-block;
-    border-radius: 4px 0 0 4px;
-    text-align: center;
-    border: 3;
-    color: #555;
-}
-
-
 .card-deck .card {
     display: block;
     flex-basis: 33.3%; /* change this value for each breakpoint*/
-  }
+    text-align: center;
+}
+
+.pokemon-title {
+    text-align: center;
+    text-transform: capitalize;
+}

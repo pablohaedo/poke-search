@@ -14,7 +14,7 @@ class Pokemon extends Component {
         if (this.props.name !== prevProps.name) {
             console.log(this.props)
             let { name } = this.props
-            fetch(process.env.API_URL + name)
+            fetch(process.env.REACT_APP_API_URL + name)
                 .then(res => res.json())
                 .then((response) => {
                     if (this._isMounted) {
@@ -41,7 +41,7 @@ class Pokemon extends Component {
 
                     <Card.Img variant="top" src={this.state.imgUrl} />
                     <Card.Body>
-                        <Card.Title>{name}</Card.Title>
+                        <Card.Title className='pokemon-title'>{name}</Card.Title>
                     </Card.Body>
                 </Card>
             </div>

@@ -1,5 +1,3 @@
-
-
 .container{
     padding: 30px 30px;
 }
@@ -13,5 +11,37 @@
     justify-content: flex-start;
     flex-flow: row wrap; 
     align-items: stretch;
-  }
+}
   
+  
+input {
+    height: 35px;
+    min-width: 300px;
+    border-radius: 4px 0 0 4px;
+    text-align: center;
+    border: 3;
+    font-size: 15px;
+    color: #555;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #999;
+    color: white;
+    border-top: 1px;
+    text-align: center;
+    clear: both;
+}
+
+.floatleft {
+    float: left;
+    padding: 10px 50px;
+}
+
+.floatright {
+    float: right;
+    padding: 10px 50px;
+}
