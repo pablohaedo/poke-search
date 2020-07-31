@@ -72,5 +72,12 @@ server {
 ----------------------------------------------------------------------------
 To run tests:
 ```shell
-./vendor/bin/phpunit/
+./vendor/bin/phpunit
+```
+
+### Static Analysis (https://phpstan.org/)
+----------------------------------------------------------------------------
+To run static analysis:
+```shell
+./vendor/bin/phpstan analyze app
 ```
