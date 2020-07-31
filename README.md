@@ -15,7 +15,12 @@ composer install
 npm install
 ```
 
-#### Compile frontend
+#### Copy configuration .env
+```php
+cp .env.example .env
+```
+
+#### Compile frontend (Make sure REACT_APP_API_URL is set)
 ```php
 npm run build
 ```
